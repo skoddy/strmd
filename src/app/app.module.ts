@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
+/* Firebase */
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+export const firebaseConfig = environment.firebaseConfig;
 
 
 @NgModule({
@@ -19,6 +23,7 @@ import { SharedModule } from '@app/shared';
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

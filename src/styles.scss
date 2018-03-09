@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles-variables';
+
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+@import 'default-theme.scss';
+@import 'light-theme.scss';
+@import 'black-theme.scss';
+@import 'nature-theme.scss';
+
+@import 'app/app.component.scss-theme';
+
+
+@mixin custom-components-theme($theme) {
+  @include strm-app-component-theme($theme);
+
+}
+
+.default-theme {
+  @include angular-material-theme($strm-theme);
+  @include custom-components-theme($strm-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($strm-light-theme);
+  @include custom-components-theme($strm-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($strm-black-theme);
+  @include custom-components-theme($strm-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($strm-nature-theme);
+  @include custom-components-theme($strm-nature-theme);
+}
