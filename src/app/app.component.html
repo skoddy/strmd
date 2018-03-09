@@ -1,21 +1,85 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-sidenav-container>
+    <mat-sidenav class="left-sidenav" #start (open)="myinput.focus()" [mode]="mobileQuery.matches ? 'over' : 'side'" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="0" [opened]="mobileQuery.matches ? 'false' : 'true'">
+<div class="left-sidenav-header" [class.left-sidenav-header-mobile]="mobileQuery.matches">
+          <div class="sidenav-btn">
+            <button mat-icon-button (click)="start.toggle(undefined, 'mouse')">
+              <mat-icon class="left-sidenav-menu-icon">menu</mat-icon>
+            </button>
+          </div>
+          <div class="left-sidenav-title">STREAM</div>
+        </div>
+      <mat-divider></mat-divider>
 
-<router-outlet></router-outlet>
+      <mat-nav-list dense role="navigation">
+        <a mat-list-item class="left-sidenav-link" routerLink="/feed" routerLinkActive="left-sidenav-link-active" (click)="mobileQuery.matches ? start.close('mouse') : 'false' ">
+          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">home</mat-icon>
+          <span class="left-sidenav-link"> Home </span>
+        </a>
+        <a mat-list-item class="left-sidenav-link" routerLink="/posts" routerLinkActive="left-sidenav-link-active" (click)="mobileQuery.matches ? start.close('mouse') : 'false' ">
+          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">featured_play_list</mat-icon>
+          <span class="left-sidenav-link"> Meine Posts </span>
+        </a>
+        <a mat-list-item class="left-sidenav-link" routerLink="/userlist" routerLinkActive="left-sidenav-link-active" (click)="mobileQuery.matches ? start.close('mouse') : 'false' ">
+          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">group</mat-icon>
+          <span class="left-sidenav-link"> Personen </span>
+        </a>
+        <a mat-list-item class="left-sidenav-link" routerLink="/chat" routerLinkActive="left-sidenav-link-active" (click)="mobileQuery.matches ? start.close('mouse') : 'false' ">
+          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">chat_bubble</mat-icon>
+          <span class="left-sidenav-link"> Chat </span>
+        </a>
+        <a mat-list-item class="left-sidenav-link" routerLink="/test" routerLinkActive="left-sidenav-link-active" (click)="mobileQuery.matches ? start.close('mouse') : 'false' ">
+          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">build</mat-icon>
+          <span class="left-sidenav-link"> Test </span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <div>
+      <input type="hidden" name="UserBrowser" value="" #myinput>
+    </div>
+    <mat-sidenav class="right-sidenav" #end mode="side" position="end" fixedInViewport="true" fixedTopGap="56" fixedBottomGap="0">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
+         </mat-nav-list>
+      <button mat-button (click)="end.close('mouse')">Close</button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar class="toolbar-header mat-elevation-z1">
+        <div class="sidenav-btn">
+          <button mat-icon-button (click)="start.toggle(undefined, 'mouse')">
+            <mat-icon class="toolbar-menu-icon">menu</mat-icon>
+          </button>
+        </div>
+        STREAM
+        <span class="spacer"></span>
+        <button mat-icon-button><mat-icon (click)="switchTheme()">invert_colors</mat-icon></button>
+        <button mat-icon-button><mat-icon (click)="end.toggle()">group</mat-icon></button>
+        
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/profile">
+            Profil
+          </button>
+          <button mat-menu-item (click)="logout()">
+            Abmelden
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+      <div class="sidenav-content" [class.sidenav-content-mobile]="mobileQuery.matches">
+        <router-outlet></router-outlet>
+
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+

@@ -1,0 +1,5 @@
+$strm-primary: mat-palette($mat-indigo, 800, 300, 900);
+$strm-accent: mat-palette($mat-light-blue);
+$strm-warn: mat-palette($mat-pink, 600);
+
+$strm-theme: mat-light-theme($strm-primary, $strm-accent, $strm-warn);
