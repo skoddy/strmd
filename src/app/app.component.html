@@ -1,85 +1,33 @@
-<mat-sidenav-container>
-    <mat-sidenav class="left-sidenav" #start (open)="myinput.focus()" mode="over" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="0" opened="true">
-<div class="left-sidenav-header">
-          <div class="sidenav-btn">
-            <button mat-icon-button (click)="start.toggle(undefined, 'mouse')">
-              <mat-icon class="left-sidenav-menu-icon">menu</mat-icon>
-            </button>
-          </div>
-          <div class="left-sidenav-title">STREAM</div>
-        </div>
-      <mat-divider></mat-divider>
+<mat-toolbar class="example-header">Header</mat-toolbar>
 
-      <mat-nav-list dense role="navigation">
-        <a mat-list-item class="left-sidenav-link" routerLink="/feed" routerLinkActive="left-sidenav-link-active" >
-          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">home</mat-icon>
-          <span class="left-sidenav-link"> Home </span>
-        </a>
-        <a mat-list-item class="left-sidenav-link" routerLink="/posts" routerLinkActive="left-sidenav-link-active" >
-          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">featured_play_list</mat-icon>
-          <span class="left-sidenav-link"> Meine Posts </span>
-        </a>
-        <a mat-list-item class="left-sidenav-link" routerLink="/userlist" routerLinkActive="left-sidenav-link-active" >
-          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">group</mat-icon>
-          <span class="left-sidenav-link"> Personen </span>
-        </a>
-        <a mat-list-item class="left-sidenav-link" routerLink="/chat" routerLinkActive="left-sidenav-link-active" >
-          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">chat_bubble</mat-icon>
-          <span class="left-sidenav-link"> Chat </span>
-        </a>
-        <a mat-list-item class="left-sidenav-link" routerLink="/test" routerLinkActive="left-sidenav-link-active" >
-          <mat-icon matListIcon class="left-sidenav-icon" routerLinkActive="left-sidenav-icon-active">build</mat-icon>
-          <span class="left-sidenav-link"> Test </span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <div>
-      <input type="hidden" name="UserBrowser" value="" #myinput>
-    </div>
-    <mat-sidenav class="right-sidenav" #end mode="side" position="end" fixedInViewport="true" fixedTopGap="56" fixedBottomGap="0">
-        <mat-nav-list>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-            <a mat-list-item routerLink="/test"> Lorem Ipsum </a>
-         </mat-nav-list>
-      <button mat-button (click)="end.close('mouse')">Close</button>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="left-sidenav" #sidenav mode="side" opened="true" class="example-sidenav" fixedInViewport="true" fixedTopGap="0"
+    fixedBottomGap="0">
+    <mat-nav-list>
+      <mat-list-item>
+         <a matLine href="#">jojijoijoojoi</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a matLine href="#">jojijoijoojoi</a>
+     </mat-list-item>
+     <mat-list-item>
+      <a matLine href="#">jojijoijoojoi</a>
+   </mat-list-item>
+   <mat-list-item>
+    <a matLine href="#">jojijoijoojoi</a>
+ </mat-list-item>
+ <mat-list-item>
+  <a matLine href="#">jojijoijoojoi</a>
+</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
 
-    </mat-sidenav>
+  <mat-sidenav-content>
 
-    <mat-sidenav-content>
-      <mat-toolbar class="toolbar-header mat-elevation-z1">
-        <div class="sidenav-btn">
-          <button mat-icon-button (click)="start.toggle(undefined, 'mouse')">
-            <mat-icon class="toolbar-menu-icon">menu</mat-icon>
-          </button>
-        </div>
-        STREAM
-        <span class="spacer"></span>
-        <button mat-icon-button><mat-icon>invert_colors</mat-icon></button>
-        <button mat-icon-button><mat-icon (click)="end.toggle()">group</mat-icon></button>
-        
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/profile">
-            Profil
-          </button>
-          <button mat-menu-item>
-            Abmelden
-          </button>
-        </mat-menu>
-      </mat-toolbar>
-      <div class="sidenav-content">
-        <router-outlet></router-outlet>
+    <p>
+      <button mat-button (click)="sidenav.toggle()">Toggle</button>
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
+<mat-toolbar class="example-footer">Footer</mat-toolbar>
